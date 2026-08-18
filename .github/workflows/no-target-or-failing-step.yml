@@ -1,0 +1,14 @@
+name: Pipelines No Target or Failing Step
+on:
+  workflow_call
+
+jobs:
+  pipelines_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log starting
+        run: echo "Starting"
+      - name: "Preflight"
+        run: echo "Success"
+      - name: Log ending
+        run: echo "Ending"
