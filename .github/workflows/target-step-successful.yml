@@ -1,0 +1,15 @@
+name: Pipelines Successful
+on:
+  workflow_call
+
+jobs:
+  pipelines_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pre-target failing step that does not prevent job from succeeding
+        run: exit 1
+        continue-on-error: true
+      - name: "[TerragruntExecute]: Test"
+        run: echo "Success"
+      - name: Post-target step
+        run: echo "Success"
